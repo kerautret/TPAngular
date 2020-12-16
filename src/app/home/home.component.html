@@ -1,0 +1,37 @@
+
+
+<div class="container color-dark">
+    <div *ngIf="false" class="col">
+        <p>Un élément de la liste </p>
+    </div>
+    <div class="col">
+        <p>Ma liste d'élément ({{nbItems}}) </p>
+    </div>
+
+
+    
+</div>
+<div class="container color-light"  [@animobjectifs]="objectifs.length">
+
+    <div class="col">
+        <p class="sm">
+            Un nouvel élément de la liste:
+            <input type="text" class="txt"  name = "nouveauEleme" [(ngModel)]="objectifText"/>
+            <br>
+            valeur: {{objectifText}}     
+            <br>
+            <br>
+
+            Mon nouvel objectif
+            <input type="submit" [ngClass]="{'btn': getClass(), 'btnok': !getClass()}"  [value]="btnText" (click)="ajooutItem()" ><br>
+               
+        </p>
+
+    </div>
+
+    <div class="col">
+        <p *ngFor="let elem of objectifs" class="life-container">  {{elem}}  </p>
+        <img *ngFor="let a of tabImages" width="300" src="{{a}}" />
+
+    </div>
+</div>
